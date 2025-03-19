@@ -1,51 +1,97 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-// Teste larissa
+struct Card
+{
+  float area;
+  float pib;
+  int tourist_spots;
+  int population;
+
+  float population_density; // Calculed by the code
+  float pib_head;           // Calculed by the code
+};
+
+int menu()
+{
+start:
+  int selected_item;
+
+  printf("==========================\n");
+  printf("MENU DO SUPER TRUNFO\n");
+  printf("==========================\n");
+
+  printf("\n");
+  printf("\n");
+  printf("O QUE DESEJA FAZER?\n");
+  printf("\n");
+  printf("\n");
+  printf("[1] - Jogar | [2] - Cadastrar cartas | [3] - Sair\n");
+  printf("\n");
+  printf("\n");
+
+  scanf("%d", &selected_item);
+
+  switch (selected_item)
+  {
+  case 1:
+    return selected_item;
+  case 2:
+    return selected_item;
+  case 3:
+    return -1;
+
+  default:
+    goto start;
+  }
+}
 
 int main()
 {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+  struct Card cards[5] = {};
+  int finishedCount = 0;
 
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
+  int selected = menu();
 
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+  printf("ITEM SELECTED = %d", selected);
 
-    float area, pib;
-    int touristSpot, population;
+  if (selected == -1)
+  {
+    return 1;
+  }
 
-    printf("Olá, vamos iniciar o super trunfo de países?\n");
-    printf("Antes de iniciarmos, precisamos criar nossas cartas\n");
+  // printf("Olá, vamos iniciar o super trunfo de países?\n");
+  // if (finishedCount < 2)
+  // {
+  //   printf("Antes de iniciarmos, precisamos criar nossas cartas\n");
+  //   printf("Precisamos de no mínimo 2 cartas");
+  // }
 
-    printf("Vamos criar a primeira.\n");
+  //  float area, pib;
+  //    int touristSpot, population;
 
-    printf("Diga me a área do país, modelo: 10.0\n");
-    scanf("%f", &area);
+  //
+  //    printf("Vamos criar a primeira.\n");
+  //
+  //    printf("Diga me a área do país, modelo: 10.0\n");
+  //    scanf("%f", &area);
+  //
+  //    printf("Agora preciso da população, modelo: 1000\n");
+  //    scanf("%d", &population);
+  //
+  //    printf("Agora, preciso do PIB deste país\n");
+  //    scanf("%f", &pib);
+  //
+  //    printf("E por ultimo, preciso da quantidade de pontos turísticos\n");
+  //    scanf("%d", &touristSpot);
+  //
+  //    printf("\n\n============== PRIMEIRA CARTA CADASTRADA
+  //    ============\n\n\n");
+  //
+  //    printf("Quantidade de pontos turísticos: %d\n", touristSpot);
+  //    printf("População total de %d\n\n", population);
+  //
+  //    printf("Área total do país será de %.2f\n", area);
+  //    printf("PIB desta país é será de %.2f\n", pib);
 
-    printf("Agora preciso da população, modelo: 1000\n");
-    scanf("%d", &population);
-
-    printf("Agora, preciso do PIB deste país\n");
-    scanf("%f", &pib);
-
-    printf("E por ultimo, preciso da quantidade de pontos turísticos\n");
-    scanf("%d", &touristSpot);
-
-    printf("\n\n============== PRIMEIRA CARTA CADASTRADA ============\n\n\n");
-
-    printf("Quantidade de pontos turísticos: %d\n", touristSpot);
-    printf("População total de %d\n\n", population);
-
-    printf("Área total do país será de %.2f\n", area);
-    printf("PIB desta país é será de %.2f\n", pib);
-
-    return 0;
+  return 0;
 }
